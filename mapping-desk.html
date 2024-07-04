@@ -59,8 +59,8 @@
   </style>
   <div class="w3-container">
     <h2>Mapping instructions</h2>
-    <p>Please map the <a id="map-link" href="#" onclick="updateParentMapLink()">focus area</a> following the
-      instructions below. Follow the <a href="https://wiki.openstreetmap.org/wiki/Map_features" target="_blank">OSM
+    <p>Please follow the
+      instructions below. See the <a href="https://wiki.openstreetmap.org/wiki/Map_features" target="_blank">OSM
         Wiki</a> for anything not covered here. </p>
     <div class="w3-bar w3-black">
       <button class="w3-bar-item w3-button tablink w3-red" onclick="openFeature(event,'Roads')">Roads</button>
@@ -182,12 +182,6 @@
       }
       document.getElementById(featureName).style.display = "block";
       evt.currentTarget.className += " w3-red";
-    }
-    function updateParentMapLink() {
-      const parentUrl = window.top.location.href;
-      const newMapValue = '13.00/24.69527/46.68419'; // New map values
-      const newUrl = parentUrl.replace(/map=[^&]+/, 'map=' + newMapValue);
-      window.top.location.href = newUrl;
     }
   </script>
 </body>

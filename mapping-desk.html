@@ -61,7 +61,7 @@
     <h2>Mapping instructions</h2>
     <p>Please map the <a id="map-link" href="#" onclick="updateParentMapLink()">focus area</a> following the
       instructions below. Follow the <a href="https://wiki.openstreetmap.org/wiki/Map_features" target="_blank">OSM
-        Wiki</a> for anything not covered here. </p>
+        Wiki</a> for anything not covered here. Please tag every changeset with <span style="font-family:'Lucida Console', monospace; font-size:small;"><a href="https://wiki.openstreetmap.org/wiki/Key:source" target="_blank">source=</a>survey;image;Hudhud</span> to indicate the source of the information. </p>
     <div class="w3-bar w3-black">
       <button class="w3-bar-item w3-button tablink w3-red" onclick="openFeature(event,'Roads')">Roads</button>
       <button class="w3-bar-item w3-button tablink" onclick="openFeature(event,'Signs')">Signs & lights</button>
@@ -95,14 +95,8 @@
               style="font-family:'Lucida Console', monospace; font-size:small;">:lanes</span></a>. </li>
         <li><strong>Reference number</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:ref"
             target="_blank"><span style="font-family:'Lucida Console', monospace; font-size:small;">ref=</span></a></li>
-        <li><strong>Nice-to-have tags</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:surface"
-            target="_blank"><span style="font-family:'Lucida Console', monospace; font-size:small;">surface=</span></a>,
-          <a href="https://wiki.openstreetmap.org/wiki/Key:sidewalk" target="_blank"><span
-              style="font-family:'Lucida Console', monospace; font-size:small;">sidewalk=left/right/both/no</span></a>,
-          <a href="https://wiki.openstreetmap.org/wiki/Key:parking" target="_blank"><span
-              style="font-family:'Lucida Console', monospace; font-size:small;">parking=left/right/both</span></a>, <a
-            href="https://wiki.openstreetmap.org/wiki/Key:shoulder" target="_blank">Shoulder lanes</a>
-        </li>
+    <li><strong>Nice-to-have tags</strong>: <ul><li><a href="https://wiki.openstreetmap.org/wiki/Key:surface" target="_blank"><span style="font-family:'Lucida Console', monospace; font-size:small;">surface=</span></a></li><li><a href="https://wiki.openstreetmap.org/wiki/Key:sidewalk" target="_blank"><span style="font-family:'Lucida Console', monospace; font-size:small;">sidewalk=left/right/both/no</span></a></li><li><a href="https://wiki.openstreetmap.org/wiki/Key:parking" target="_blank"><span style="font-family:'Lucida Console', monospace; font-size:small;">parking=left/right/both</span></a>, <a href="https://wiki.openstreetmap.org/wiki/Key:shoulder" target="_blank">Shoulder lanes</a></li></ul>
+</li>
       </ol>
       <p>Bridges and tunnels:</p>
       <ol>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<title>Hudhud Map Editing Desk - Instructions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+
+    .w3-container {
+      padding: 0.01em 16px;
+    }
+
+    .w3-bar {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .w3-bar .w3-bar-item {
+      padding: 8px 16px;
+      float: left;
+      width: auto;
+      border: none;
+      display: block;
+      outline: 0;
+    }
+
+    .w3-black,
+    .w3-hover-black:hover {
+      color: #fff !important;
+      background-color: #000 !important;
+    }
+
+    .w3-button {
+      border: none;
+      display: inline-block;
+      padding: 8px 16px;
+      vertical-align: middle;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      background-color: inherit;
+      text-align: center;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .w3-red,
+    .w3-hover-red:hover {
+      color: #fff !important;
+      background-color: #f44336 !important;
+    }
+
+    .w3-border {
+      border: 1px solid #ccc !important;
+    }
+  </style>
+  <div class="w3-container">
+    <h2>Mapping instructions</h2>
+    <p>Please map the <a id="map-link" href="#" onclick="updateParentMapLink()">focus area</a> following the
+      instructions below. Follow the <a href="https://wiki.openstreetmap.org/wiki/Map_features" target="_blank">OSM
+        Wiki</a> for anything not covered here. </p>
+    <div class="w3-bar w3-black">
+      <button class="w3-bar-item w3-button tablink w3-red" onclick="openFeature(event,'Roads')">Roads</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openFeature(event,'Signs')">Signs & lights</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openFeature(event,'Other')">Other</button>
+    </div>
+    <div id="Roads" class="w3-container w3-border feature">
+      <h2>Roads</h2>
+      <p>"Highway" tag and its values:</p>
+      <ol>
+        <li><strong>Type</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:highway" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">highway=</span></a>. See also <a
+            href="https://wiki.openstreetmap.org/wiki/Saudi_Arabia#Highway/Roads_classification_in_Saudi_Arabia"
+            target="_blank">here</a> (might need editing) and <a
+            href="https://wiki.openstreetmap.org/wiki/International_highway_classification_equivalence"
+            target="_blank">here</a> (Saudi still missing).</li>
+        <li><strong>Name</strong>: Tags <a href="https://wiki.openstreetmap.org/wiki/Key:name" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">name=</span></a> and <span
+            style="font-family:'Lucida Console', monospace; font-size:small;">name:en=</span>.</li>
+        <li><strong>Oneway?</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:oneway" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">oneway=yes</span></a>, where applicable.
+          For devided roads please use <a href="https://wiki.openstreetmap.org/wiki/Tag:dual_carriageway%3Dyes"
+            target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">dual_carriageway=yes</span></a>.</li>
+        <li><strong>Speed limit</strong>: Use <a href="https://wiki.openstreetmap.org/wiki/Key:maxspeed"
+            target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">maxspeed=</span></a>.</li>
+        <li><strong>Number and type of lanes</strong>: Use the tags <a
+            href="https://wiki.openstreetmap.org/wiki/Key:lanes" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">lanes=</span></a> or <a
+            href="https://wiki.openstreetmap.org/wiki/Lanes" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">:lanes</span></a>. </li>
+        <li><strong>Reference number</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:ref"
+            target="_blank"><span style="font-family:'Lucida Console', monospace; font-size:small;">ref=</span></a></li>
+        <li><strong>Nice-to-have tags</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:surface"
+            target="_blank"><span style="font-family:'Lucida Console', monospace; font-size:small;">surface=</span></a>,
+          <a href="https://wiki.openstreetmap.org/wiki/Key:sidewalk" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">sidewalk=left/right/both/no</span></a>,
+          <a href="https://wiki.openstreetmap.org/wiki/Key:parking" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">parking=left/right/both</span></a>, <a
+            href="https://wiki.openstreetmap.org/wiki/Key:shoulder" target="_blank">Shoulder lanes</a>
+        </li>
+      </ol>
+      <p>Bridges and tunnels:</p>
+      <ol>
+        <li><strong>Bridges</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:bridge" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">bridge=</span></a> and <a
+            href="https://wiki.openstreetmap.org/wiki/Key:layer" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">layer=</span></a>.</li>
+        <li><strong>Tunnels</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:tunnel" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">tunnel=</span></a> and <a
+            href="https://wiki.openstreetmap.org/wiki/Key:layer" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">layer=</span></a>.</li>
+      </ol>
+      <p>Roundabouts and other junctions:</p>
+      <ol>
+        <li><a href="https://wiki.openstreetmap.org/wiki/Key:junction" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">junction=</span></a></li>
+      </ol>
+    </div>
+    <div id="Signs" class="w3-container w3-border feature" style="display:none">
+      <h2>Traffic signs and lights</h2>
+      <p>Traffic signs:</p>
+      <ol>
+        <li><strong>Stop sign</strong>: <a href="https://wiki.openstreetmap.org/wiki/Tag:highway%3Dstop"
+            target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">highway=stop</span></a>.</li>
+
+
+        <li><strong>Other signs</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:traffic_sign"
+            target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">traffic_sign=</span></a>. Most
+          interesting signs: maxwidth, maxheight, maxweight.</li>
+      </ol>
+      <p>Traffic lights:</p>
+      <ol>
+        <li><a href="https://wiki.openstreetmap.org/wiki/Tag:highway%3Dtraffic_signals" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">highway=traffic_signals</span></a>.</li>
+      </ol>
+      <p>Destination signs:</p>
+      <ol>
+        <li><a href="https://wiki.openstreetmap.org/wiki/Key:destination" target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">destination=</span></a>. Use also in
+          combination with Lanes!</li>
+      </ol>
+    </div>
+    <div id="Other" class="w3-container w3-border feature" style="display:none">
+      <h2>Other map features</h2>
+      <p>List of features we would like you to map beyond highways and traffic signs/lights. Please note that that list
+        might be incomplete.</p>
+      <ol>
+        <li><strong>Road bumps</strong>: <a href="https://wiki.openstreetmap.org/wiki/Key:traffic_calming"
+            target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">traffic_calming=</span></a>.</li>
+        <li><strong>Speed cameras</strong>: <a href="https://wiki.openstreetmap.org/wiki/Relation:enforcement"
+            target="_blank"><span
+              style="font-family:'Lucida Console', monospace; font-size:small;">Relation:enforcement</span></a>. Please
+          note that this is not a simple tag but a "relation" (a set of tags). Please make sure that you understand
+          relations before mapping.</li>
+      </ol>
+    </div>
+  </div>
+  <p>
+  <div style="width:100%; display: flex; justify-content: center;"><a href="https://www.maptoolkit.com"
+      title="Maptoolkit" data-height="60" data-padding="15" target="_blank"><img
+        src="https://www.maptoolkit.com/wp-content/uploads/2023/11/maptoolkit-logo-dark2x.png"
+        data-retina="https://www.maptoolkit.com/wp-content/uploads/2023/11/maptoolkit-logo-dark2x.png" data-height="134"
+        alt="maptoolkit-logo-dark" data-no-retina="" style="max-height: 35px;"></a></div>
+  </p>
+  <script>
+    function openFeature(evt, featureName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("feature");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+      }
+      document.getElementById(featureName).style.display = "block";
+      evt.currentTarget.className += " w3-red";
+    }
+    function updateParentMapLink() {
+      const parentUrl = window.top.location.href;
+      const newMapValue = '13.00/24.69527/46.68419'; // New map values
+      const newUrl = parentUrl.replace(/map=[^&]+/, 'map=' + newMapValue);
+      window.top.location.href = newUrl;
+    }
+  </script>
+</body>
+</html>
